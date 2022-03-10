@@ -21,6 +21,10 @@ function loadRegionPage(regionData) {
         regionDivEl.id = "region-div"
         // creates a h1 element for the region page
         var regionH1El = document.createElement("h1")
+        var iframeEl = document.createElement("iframe")
+        iframeEl.setAttribute('src',"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255247.50118893568!2d29.72277829363196!3d-1.6105314794483283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc42967673bda5%3A0x72a4336a4d2a5469!2sNorthern%20Province%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1646873675630!5m2!1sen!2sus")
+        iframeEl.setAttribute("width","600");
+        iframeEl.setAttribute("height","450") //style="border:0;" allowfullscreen="" loading="lazy")
         /*  this dynamicallys populates the text of the h1 element
             based on the returned key of the regionData */
         switch(key){
@@ -42,6 +46,7 @@ function loadRegionPage(regionData) {
         }
         // appends the h1 element to the division container
         regionDivEl.appendChild(regionH1El);
+        regionDivEl.appendChild(iframeEl);
         // appends the div container to the body of the document 
         document.body.appendChild(regionDivEl)
     }
