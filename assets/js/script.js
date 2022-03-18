@@ -27,6 +27,7 @@ function loadRegionPage(regionData) {
         // DIV 1: creates a h1 element, link to the region page, and a regional iframe
         var regionH1El = document.createElement("h1");
         var regionPageLink = document.createElement("a");
+        regionPageLink.className = "yellow-text accent-4"
         var iframeEl = document.createElement("iframe");
         iframeEl.setAttribute("width","600");
         iframeEl.setAttribute("height","450");
