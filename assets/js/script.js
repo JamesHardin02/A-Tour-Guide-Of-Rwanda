@@ -19,10 +19,11 @@ function loadRegionPage(regionData) {
         /*  assigns an id so it can be removed when another region 
             button is clicked */
         regionDivEl.id = "region-div";
-        regionDivEl.className = "row";
+        regionDivEl.className = "row container";
         var div1 = document.createElement("div");
         var div2 = document.createElement("div");
-        div1.className, div2.className = "col s6"
+        div1.className = "col m6 s12"
+        div2.className = "col s12 xl3 offset-xl2"
         // DIV 1: creates a h1 element, link to the region page, and a regional iframe
         var regionH1El = document.createElement("h1");
         var regionPageLink = document.createElement("a");
@@ -38,6 +39,9 @@ function loadRegionPage(regionData) {
         provinceli1 = document.createElement("li");
         provinceli2 = document.createElement("li");
         provinceli3 = document.createElement("li");
+        provinceli1.className = "section"
+        provinceli2.className = "section"
+        provinceli3.className = "section"
         /*  this dynamicallys populates the text of the h1 element, google map,
             and highlight list based on the returned key of the regionData */
         switch(key){
@@ -65,7 +69,9 @@ function loadRegionPage(regionData) {
                 regionH1El.textContent = "Western Province Page"
                 iframeEl.setAttribute("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510345.7615495495!2d28.988253522355972!3d-2.124341255557795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dd1d1b7ef78b5d%3A0xc08b48dab00370f5!2sWestern%20Province%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1646875954460!5m2!1sen!2sus")
                 regionPageLink.setAttribute('href', "./region-pages/western-region.html")
-                
+                provinceli1.textContent = "Enjoy gorgeous views and relaxation by Lake Kivu in the provincial captial of Kibuye"
+                provinceli2.textContent = "And the beach and island retreats in the town of Kigufi"
+                provinceli3.textContent = "Once rejuvenated go on a mountain hike and jungle adventure in the country side of the Western Province"
                 break;
         }
         // DIV 1: appends the h1 element to the division container
@@ -74,8 +80,10 @@ function loadRegionPage(regionData) {
         div1.appendChild(iframeEl);
         // DIV 2: appends highlight ul to div 2 then main container
         provinceUl.append(provinceli1, provinceli2, provinceli3);
+        div2.appendChild(provinceUl);
         // appends div container to main container
         regionDivEl.appendChild(div1);
+        regionDivEl.appendChild(div2);
         // appends the div container to the body of the document 
         document.body.appendChild(regionDivEl);
     }
