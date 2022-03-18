@@ -15,22 +15,31 @@ function loadRegionPage(regionData) {
         to variables "key, value" respectively */
     for(const [key, value] of Object.entries(regionData)){
         // creates a container to hold all elements about the region
-        var regionDivEl = document.createElement("div")
+        var regionDivEl = document.createElement("div");
         /*  assigns an id so it can be removed when another region 
             button is clicked */
-        regionDivEl.id = "region-div"
-        regionDivEl.className = "container"
-        // creates a h1 element, link to the region page, and a regional iframe
-        var regionH1El = document.createElement("h1")
-        var regionPageLink = document.createElement("a")
-        var iframeEl = document.createElement("iframe")
+        regionDivEl.id = "region-div";
+        regionDivEl.className = "row";
+        var div1 = document.createElement("div");
+        var div2 = document.createElement("div");
+        div1.className, div2.className = "col s6"
+        // DIV 1: creates a h1 element, link to the region page, and a regional iframe
+        var regionH1El = document.createElement("h1");
+        var regionPageLink = document.createElement("a");
+        var iframeEl = document.createElement("iframe");
         iframeEl.setAttribute("width","600");
         iframeEl.setAttribute("height","450");
         iframeEl.setAttribute("style","border:0");
-        iframeEl.setAttribute("allowfullscreen", "") 
-        iframeEl.setAttribute("loading","lazy")
-        /*  this dynamicallys populates the text of the h1 element
-            based on the returned key of the regionData */
+        iframeEl.setAttribute("allowfullscreen", "") ;
+        iframeEl.setAttribute("loading","lazy");
+        // DIV 2: Highlights of the province
+        provinceUl = document.createElement("ul");
+        provinceUl.className = "flow-text";
+        provinceli1 = document.createElement("li");
+        provinceli2 = document.createElement("li");
+        provinceli3 = document.createElement("li");
+        /*  this dynamicallys populates the text of the h1 element, google map,
+            and highlight list based on the returned key of the regionData */
         switch(key){
             case "North":
                 regionH1El.textContent = "Northern Province Page"
@@ -56,12 +65,17 @@ function loadRegionPage(regionData) {
                 regionH1El.textContent = "Western Province Page"
                 iframeEl.setAttribute("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510345.7615495495!2d28.988253522355972!3d-2.124341255557795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dd1d1b7ef78b5d%3A0xc08b48dab00370f5!2sWestern%20Province%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1646875954460!5m2!1sen!2sus")
                 regionPageLink.setAttribute('href', "./region-pages/western-region.html")
+                
                 break;
         }
-        // appends the h1 element to the division container
+        // DIV 1: appends the h1 element to the division container
         regionPageLink.appendChild(regionH1El);
-        regionDivEl.appendChild(regionPageLink);
-        regionDivEl.appendChild(iframeEl);
+        div1.appendChild(regionPageLink);
+        div1.appendChild(iframeEl);
+        // DIV 2: appends highlight ul to div 2 then main container
+        provinceUl.append(provinceli1, provinceli2, provinceli3);
+        // appends div container to main container
+        regionDivEl.appendChild(div1);
         // appends the div container to the body of the document 
         document.body.appendChild(regionDivEl);
     }
