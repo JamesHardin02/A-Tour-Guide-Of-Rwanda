@@ -159,6 +159,9 @@ function getCoronaData() {
         return response.json();
     })
     .then(function(data){
+        while(coronaInfoDiv.firstChild){
+            coronaInfoDiv.firstChild.remove();
+        };
         console.log(data)
         var confirmedP = document.createElement('p')
         confirmedP.textContent = "Confirmed Cases: " + data["Total Cases_text"];
