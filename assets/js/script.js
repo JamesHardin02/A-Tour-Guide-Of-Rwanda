@@ -1,6 +1,7 @@
 /* <nav> element which is the parent to the region buttons
     a 'click' event listener is added to this at the bottom of the file */
 var regionNavEl = document.getElementById('region-navigation');
+var coronaInfoButton = document.getElementById('graph');
 
 function loadRegionPage(regionData) {
     /*  finds if there is an existing page loaded and removes it
@@ -148,3 +149,27 @@ function getProvince(event){
     fires the function getProvince when a button is clicked */
 regionNavEl.addEventListener('click', getProvince)
 
+
+// ----------- CORONA INFO BUTTON HANDLERS ----------- //
+var coronaInfoDiv = document.getElementById('coronaInfoDiv');
+
+function getCoronaData() {
+    fetch("https://covid-19.dataflowkit.com/v1/rwanda")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+        var confirmedP = document.createElement('p')
+        confirmedP.textContent = "Confirmed Cases: " + data["Total Cases_text"];
+        var deathsP = document.createElement('p')
+        deathsP.textContent = "Deaths: " + data["Total Deaths_text"];
+        var recoveredP = document.createElement('p')
+        recoveredP.textContent = "Deaths: " + data["Total Recovered_text"];
+        coronaInfoDiv.appendChild(confirmedP);
+        coronaInfoDiv.appendChild(deathsP);
+        coronaInfoDiv.appendChild(recoveredP)
+    })
+};
+
+coronaInfoButton.addEventListener('click', getCoronaData)
