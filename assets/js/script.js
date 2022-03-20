@@ -147,3 +147,4 @@ function getProvince(event){
 /*  <nav> listens for a click on anyone of its button children
     fires the function getProvince when a button is clicked */
 regionNavEl.addEventListener('click', getProvince)
+
