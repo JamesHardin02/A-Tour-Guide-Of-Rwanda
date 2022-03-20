@@ -152,27 +152,44 @@ regionNavEl.addEventListener('click', getProvince)
 
 // ----------- CORONA INFO BUTTON HANDLERS ----------- //
 var coronaInfoDiv = document.getElementById('coronaInfoDiv');
-
+var opened = false
 function getCoronaData() {
-    fetch("https://covid-19.dataflowkit.com/v1/rwanda")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
+    if(!opened){
+        opened = true
+        fetch("https://covid-19.dataflowkit.com/v1/rwanda")
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            while(coronaInfoDiv.firstChild){
+                coronaInfoDiv.firstChild.remove();
+            };
+            console.log(data)
+            var confirmedP = document.createElement('p')
+            confirmedP.textContent = "Confirmed Cases: " + data["Total Cases_text"];
+            var deathsP = document.createElement('p')
+            deathsP.textContent = "Deaths: " + data["Total Deaths_text"];
+            var recoveredP = document.createElement('p')
+            recoveredP.textContent = "Recoveries: " + data["Total Recovered_text"];
+            var timeP = document.createElement('p')
+            timeP.textContent = "Last updated on: " + data["Last Update"];
+
+            confirmedP.className = "flow-text"
+            deathsP.className = "flow-text"
+            recoveredP.className = "flow-text"
+            timeP.className = "flow-text"
+
+            coronaInfoDiv.appendChild(confirmedP);
+            coronaInfoDiv.appendChild(deathsP);
+            coronaInfoDiv.appendChild(recoveredP)
+            coronaInfoDiv.appendChild(timeP)
+        })
+    }else{
+        opened = false
         while(coronaInfoDiv.firstChild){
             coronaInfoDiv.firstChild.remove();
         };
-        console.log(data)
-        var confirmedP = document.createElement('p')
-        confirmedP.textContent = "Confirmed Cases: " + data["Total Cases_text"];
-        var deathsP = document.createElement('p')
-        deathsP.textContent = "Deaths: " + data["Total Deaths_text"];
-        var recoveredP = document.createElement('p')
-        recoveredP.textContent = "Deaths: " + data["Total Recovered_text"];
-        coronaInfoDiv.appendChild(confirmedP);
-        coronaInfoDiv.appendChild(deathsP);
-        coronaInfoDiv.appendChild(recoveredP)
-    })
+    };
 };
 
 coronaInfoButton.addEventListener('click', getCoronaData)
