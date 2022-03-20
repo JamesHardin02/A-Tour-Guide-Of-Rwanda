@@ -59,9 +59,9 @@ function loadRegionPage(regionData) {
                 regionH1El.textContent = "Eastern Province Page"
                 iframeEl.setAttribute("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020921.933328752!2d29.867853601452822!3d-1.7411041389790136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19db8d18651bd375%3A0xf64449a9ab46b13e!2sEastern%20Province%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1646875687745!5m2!1sen!2sus")
                 regionPageLink.setAttribute('href', "./region-pages/eastern-region.html")
-                provinceli1.textContent = ""
-                provinceli2.textContent = ""
-                provinceli3.textContent = ""
+                provinceli1.textContent = "The Eastern Province is home to one of the finest golf resorts in Rwanda which is right by Lake Muhazi"
+                provinceli2.textContent = "The town of Gahini which is right by Lake Muhazi is a beautiful spot to have fun, relax, and enjoy delicious food"
+                provinceli3.textContent = "Explore the savannahs of Akagera National Park and see giraffes, elephants, zebras, and more!"
                 break;
             case "Kigali":
                 regionH1El.textContent = "Kigali Page"
