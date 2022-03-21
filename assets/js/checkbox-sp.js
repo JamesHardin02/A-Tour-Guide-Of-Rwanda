@@ -1,5 +1,5 @@
 var palaceCB = document.getElementById('palace-CB');
-var centerRetoCB = document.getElementById('center-resto-CB');
+var centerRestoCB = document.getElementById('center-resto-CB');
 var dayenuCB = document.getElementById('dayenu-CB');
 var juiceExpCB = document.getElementById('juice-exp-CB');
 var splendidCB = document.getElementById('splendid-CB');
@@ -16,12 +16,22 @@ for(const property in boxes){
             break;
         case "centerResto":
             if(boxes[property]){
-                centerRetoCB.checked = true;
+                centerRestoCB.checked = true;
             }
         case "dayenu": 
             if(boxes[property]){
                 dayenuCB.checked = true;
             }
+        case "juiceExp":
+            if(boxes[property]){
+                juiceExpCB.checked = true;
+            }
+            break;
+        case "splendidHotel":
+            if(boxes[property]){
+                splendidCB.checked = true;
+            }
+            break;
         default:
             console.log("no destination choosen")
             break;
@@ -38,12 +48,12 @@ function saveCheck(event){
             boxes.kingPalace = false;
             localStorage.setItem('boxes', JSON.stringify(boxes))
         }
-    } else if (toDo === centerRetoCB){ 
-        if(centerRetoCB.checked){
-            boxes.centerReto = true;
+    } else if (toDo === centerRestoCB){ 
+        if(centerRestoCB.checked){
+            boxes.centerResto = true;
             localStorage.setItem('boxes', JSON.stringify(boxes));
         } else{
-            boxes.centerReto = false;
+            boxes.centerResto = false;
             localStorage.setItem('boxes', JSON.stringify(boxes));
         }
     } else if (toDo === dayenuCB){
@@ -74,7 +84,7 @@ function saveCheck(event){
 }
 
 palaceCB.addEventListener('click', saveCheck);
-centerRetoCB.addEventListener('click', saveCheck);
+centerRestoCB.addEventListener('click', saveCheck);
 dayenuCB.addEventListener('click', saveCheck);
 juiceExpCB.addEventListener('click', saveCheck);
 splendidCB.addEventListener('click', saveCheck);
