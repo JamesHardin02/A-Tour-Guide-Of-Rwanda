@@ -10,7 +10,7 @@ function loadRegionPage(regionData) {
     if (searchRegionDiv){
         searchRegionDiv.remove();
     }
-
+    console.log(regionData)
     /*  loops through the regional data based on the region button clicked; 
         this loop returns each key its value in the regionData object
         to variables "key, value" respectively */
@@ -23,8 +23,10 @@ function loadRegionPage(regionData) {
         regionDivEl.className = "row container";
         var div1 = document.createElement("div");
         var div2 = document.createElement("div");
+        var div3 = document.createElement('div');
         div1.className = "col m6 s12"
         div2.className = "col s12 xl3 offset-xl2"
+        div3.className = "col s12"
         // DIV 1: creates a h1 element, link to the region page, and a regional iframe
         var regionH1El = document.createElement("h1");
         var regionPageLink = document.createElement("a");
@@ -54,14 +56,56 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = "Come and see the majestic Mountain Gorillas in their natural habitat while hiking through the Virunga Mountain range located in Musanze"
                 provinceli2.textContent = "Also enjoy spectacular views of the Volcanoes located in Volcanoes National Park, Ruhengeri"
                 provinceli3.textContent = "And be sure to check out the Musanze Caves also located in Musanze"
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Northern Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "East":
                 regionH1El.textContent = "Eastern Province Page"
                 iframeEl.setAttribute("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1020921.933328752!2d29.867853601452822!3d-1.7411041389790136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19db8d18651bd375%3A0xf64449a9ab46b13e!2sEastern%20Province%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1646875687745!5m2!1sen!2sus")
                 regionPageLink.setAttribute('href', "./region-pages/eastern-region.html")
-                provinceli1.textContent = ""
-                provinceli2.textContent = ""
-                provinceli3.textContent = ""
+                provinceli1.textContent = "The Eastern Province is home to one of the finest golf resorts in Rwanda which is right by Lake Muhazi"
+                provinceli2.textContent = "The town of Gahini which is right by Lake Muhazi is a beautiful spot to have fun, relax, and enjoy delicious food"
+                provinceli3.textContent = "Explore the savannahs of Akagera National Park and see giraffes, elephants, zebras, and more!"
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Eastern Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "Kigali":
                 regionH1El.textContent = "Kigali Page"
@@ -70,6 +114,27 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = ""
                 provinceli2.textContent = ""
                 provinceli3.textContent = ""
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Kigali: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "South":
                 regionH1El.textContent = "Southern Province Page"
@@ -78,6 +143,27 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = ""
                 provinceli2.textContent = ""
                 provinceli3.textContent = ""
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Southern Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "West":
                 regionH1El.textContent = "Western Province Page"
@@ -86,6 +172,27 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = "Enjoy gorgeous views and relaxation by Lake Kivu in the provincial captial of Kibuye"
                 provinceli2.textContent = "And the beach and island retreats in the town of Kigufi"
                 provinceli3.textContent = "Once rejuvenated go on a mountain hike and jungle adventure in the country side of the Western Province"
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Western Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
         }
         // DIV 1: appends the h1 element to the division container
@@ -98,6 +205,7 @@ function loadRegionPage(regionData) {
         // appends div container to main container
         regionDivEl.appendChild(div1);
         regionDivEl.appendChild(div2);
+        regionDivEl.appendChild(div3);
         // appends the div container to the body of the document 
         document.body.appendChild(regionDivEl);
     }
@@ -152,27 +260,44 @@ regionNavEl.addEventListener('click', getProvince)
 
 // ----------- CORONA INFO BUTTON HANDLERS ----------- //
 var coronaInfoDiv = document.getElementById('coronaInfoDiv');
-
+var opened = false
 function getCoronaData() {
-    fetch("https://covid-19.dataflowkit.com/v1/rwanda")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
+    if(!opened){
+        opened = true
+        fetch("https://covid-19.dataflowkit.com/v1/rwanda")
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            while(coronaInfoDiv.firstChild){
+                coronaInfoDiv.firstChild.remove();
+            };
+            console.log(data)
+            var confirmedP = document.createElement('p')
+            confirmedP.textContent = "Confirmed Cases: " + data["Total Cases_text"];
+            var deathsP = document.createElement('p')
+            deathsP.textContent = "Deaths: " + data["Total Deaths_text"];
+            var recoveredP = document.createElement('p')
+            recoveredP.textContent = "Recoveries: " + data["Total Recovered_text"];
+            var timeP = document.createElement('p')
+            timeP.textContent = "Last updated on: " + data["Last Update"];
+
+            confirmedP.className = "flow-text"
+            deathsP.className = "flow-text"
+            recoveredP.className = "flow-text"
+            timeP.className = "flow-text"
+
+            coronaInfoDiv.appendChild(confirmedP);
+            coronaInfoDiv.appendChild(deathsP);
+            coronaInfoDiv.appendChild(recoveredP)
+            coronaInfoDiv.appendChild(timeP)
+        })
+    }else{
+        opened = false
         while(coronaInfoDiv.firstChild){
             coronaInfoDiv.firstChild.remove();
         };
-        console.log(data)
-        var confirmedP = document.createElement('p')
-        confirmedP.textContent = "Confirmed Cases: " + data["Total Cases_text"];
-        var deathsP = document.createElement('p')
-        deathsP.textContent = "Deaths: " + data["Total Deaths_text"];
-        var recoveredP = document.createElement('p')
-        recoveredP.textContent = "Deaths: " + data["Total Recovered_text"];
-        coronaInfoDiv.appendChild(confirmedP);
-        coronaInfoDiv.appendChild(deathsP);
-        coronaInfoDiv.appendChild(recoveredP)
-    })
+    };
 };
 
 coronaInfoButton.addEventListener('click', getCoronaData)
