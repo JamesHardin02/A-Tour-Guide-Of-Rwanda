@@ -10,7 +10,7 @@ function loadRegionPage(regionData) {
     if (searchRegionDiv){
         searchRegionDiv.remove();
     }
-
+    console.log(regionData)
     /*  loops through the regional data based on the region button clicked; 
         this loop returns each key its value in the regionData object
         to variables "key, value" respectively */
@@ -23,8 +23,10 @@ function loadRegionPage(regionData) {
         regionDivEl.className = "row container";
         var div1 = document.createElement("div");
         var div2 = document.createElement("div");
+        var div3 = document.createElement('div');
         div1.className = "col m6 s12"
         div2.className = "col s12 xl3 offset-xl2"
+        div3.className = "col s12"
         // DIV 1: creates a h1 element, link to the region page, and a regional iframe
         var regionH1El = document.createElement("h1");
         var regionPageLink = document.createElement("a");
@@ -86,6 +88,16 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = "Enjoy gorgeous views and relaxation by Lake Kivu in the provincial captial of Kibuye"
                 provinceli2.textContent = "And the beach and island retreats in the town of Kigufi"
                 provinceli3.textContent = "Once rejuvenated go on a mountain hike and jungle adventure in the country side of the Western Province"
+                // DIV 3: Districts of the province
+                var i = 0
+                console.log(key[i])
+                    for(const [subKey, subValue] of Object.entries(key[i])){
+                        var districtP = document.createElement("p");
+                        districtP.textContent = subKey[1];
+                        districtP.className = "flow-text"
+                        div3.appendChild(districtP);
+                        i++
+                    }
                 break;
         }
         // DIV 1: appends the h1 element to the division container
@@ -98,6 +110,7 @@ function loadRegionPage(regionData) {
         // appends div container to main container
         regionDivEl.appendChild(div1);
         regionDivEl.appendChild(div2);
+        regionDivEl.appendChild(div3);
         // appends the div container to the body of the document 
         document.body.appendChild(regionDivEl);
     }
