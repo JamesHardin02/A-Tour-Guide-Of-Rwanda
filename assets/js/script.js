@@ -56,6 +56,27 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = "Come and see the majestic Mountain Gorillas in their natural habitat while hiking through the Virunga Mountain range located in Musanze"
                 provinceli2.textContent = "Also enjoy spectacular views of the Volcanoes located in Volcanoes National Park, Ruhengeri"
                 provinceli3.textContent = "And be sure to check out the Musanze Caves also located in Musanze"
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Northern Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "East":
                 regionH1El.textContent = "Eastern Province Page"
@@ -64,6 +85,27 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = "The Eastern Province is home to one of the finest golf resorts in Rwanda which is right by Lake Muhazi"
                 provinceli2.textContent = "The town of Gahini which is right by Lake Muhazi is a beautiful spot to have fun, relax, and enjoy delicious food"
                 provinceli3.textContent = "Explore the savannahs of Akagera National Park and see giraffes, elephants, zebras, and more!"
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Eastern Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "Kigali":
                 regionH1El.textContent = "Kigali Page"
@@ -72,6 +114,27 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = ""
                 provinceli2.textContent = ""
                 provinceli3.textContent = ""
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Kigali: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "South":
                 regionH1El.textContent = "Southern Province Page"
@@ -80,6 +143,27 @@ function loadRegionPage(regionData) {
                 provinceli1.textContent = ""
                 provinceli2.textContent = ""
                 provinceli3.textContent = ""
+                // DIV 3: Districts of the province
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
+                        var districtP = document.createElement("p");
+                        if(i === 1){
+                            districtP.textContent = "Districts of Southern Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
+                        div3.appendChild(districtP);
+                        
+                    }
+                }
                 break;
             case "West":
                 regionH1El.textContent = "Western Province Page"
