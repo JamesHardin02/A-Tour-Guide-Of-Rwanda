@@ -148,6 +148,21 @@ function loadList() {
                         locationP.textContent = "SOS Childrens Village: Visit the local childrens village and see how rwanda cares for their orphans"
                     }
                     break;
+                case "volcanos":
+                    if(boxes[property]){
+                        locationP.textContent = "Volcanos National Park: Visit the volcanos and mountains in the Northern province"
+                    }
+                    break;
+                case "gorillaFund":
+                    if(boxes[property]){
+                        locationP.textContent = "Dian Fossey Gorrila Fund: Learn about how non-profits are helping preserve wildlife in Rwanda"
+                    }
+                    break;
+                case "museum":
+                    if(boxes[property]){
+                        locationP.textContent = "Rwanda Liberation Museum: Learn about the history of the Rwandan Liberation"
+                    }
+                    break;
             };
 
             tourList.appendChild(locationP);
