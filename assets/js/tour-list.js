@@ -18,6 +18,7 @@ function loadList() {
             locationP.className = "flow-text"
 
             switch(property){
+                // WESTERN PROVINCE
                 case "KivuTours": 
                     if(boxes[property]){
                         console.log(boxes[property])
@@ -67,6 +68,27 @@ function loadList() {
                 case "nyungwe":
                     if(boxes[property]){
                         locationP.textContent = "Nyungwe Forest National Park: Hike the trails of the lush Nyungwe Forest and visit the friendly chimpanzees"
+                    }
+                    break;
+                // EASTERN PROVINCE
+                case "falconGolf":
+                    if(boxes[property]){
+                        locationP.textContent = "Falcon Golf Resort and Country Club: Enjoy a round of Golf by Lake Muhazi"
+                    }
+                    break;
+                case "dereva":
+                    if(boxes[property]){
+                        locationP.textContent = "Dereva Hotel: Enjoy a comfortable stay at the Dereva Hotel in Rwamagana"
+                    }
+                    break;
+                case "catholicParish":
+                    if(boxes[property]){
+                        locationP.textContent = "Rwamagana Catholic Parish: Be enriched by the Catholic faith of the people of Rwamagana"
+                    }
+                    break;
+                case "stAugustine":
+                    if(boxes[property]){
+                        locationP.textContent = "Centre Pastoral St. Augustin hotel: Lodge in the sanctuary of the Centre Pastoral St. Augustin hotel"
                     }
                     break;
             };

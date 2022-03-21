@@ -12,10 +12,10 @@ var palmBeachCB = document.getElementById('palm-beach-CB');
 var karisimbiCB = document.getElementById('karisimbi-CB');
 var nyungweCB = document.getElementById('nyungwe-CB');
 
-
-
 var boxes = JSON.parse(localStorage.getItem('boxes')) || {};
 console.log(boxes);
+
+//populate checkboxes according to saved destinations
 for(const property in boxes){
     switch(property){
         case "KivuTours":
