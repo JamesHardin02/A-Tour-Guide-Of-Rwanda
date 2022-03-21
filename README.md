@@ -8,7 +8,7 @@ https://rapidapi.com/victorkarangwa4/api/rwanda -
 https://covid-19.dataflowkit.com/
 
 ## Here is a picture of the deployed homepage 
-<img src="../assets/images/Screen Shot 2022-03-20 at 8.10.36 PM.png" >
+<img src="assets/images/Screen Shot 2022-03-20 at 8.10.36 PM.png" >
 
 ## These are the links to the github repo and the deployed URL
 GitHub repo: https://github.com/JamesHardin02/A-Tour-Guide-Of-Rwanda
