@@ -116,6 +116,32 @@ function loadList() {
                         locationP.textContent = "Akagera Rhino Lodge: Lodge in the mountains of Akagera over looking the savannah and Lake Ihema"
                     }
                     break;
+                // SOUTHERN PROVINCE
+                case "kingPalace":
+                    if(boxes[property]){
+                        locationP.textContent = "Ancient King Palace: Visit the palace of an ancient African king"
+                    }
+                    break;
+                case "centerResto":
+                    if(boxes[property]){
+                        locationP.textContent = "Rerumwana Center Restaurant: Enjoy rwandan cuisine at the Rerumwana Center Restaurant"
+                    }
+                    break;
+                case "dayenu": 
+                    if(boxes[property]){
+                        locationP.textContent = "Dayenu Hotel: Lodge at the Dayenu Hotel on your visit to the Southern Province"
+                    }
+                    break;
+                case "juiceExp":
+                    if(boxes[property]){
+                        locationP.textContent = "Juice Making Cultural Experience: Make fresh juice in the traditional Rwandan way"
+                    }
+                    break;
+                case "splendidHotel":
+                    if(boxes[property]){
+                        locationP.textContent = "Splendid Hotel: Enjoy a comfortable stay at the Splendid Hotel"
+                    }
+                    break;
             };
 
             tourList.appendChild(locationP);
