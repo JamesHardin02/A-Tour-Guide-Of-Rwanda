@@ -19,9 +19,14 @@ for(const property in boxes){
                 volcanosCB.checked = true;
             }
             break;
-        case "volcanos":
+        case "gorillaFund":
             if(boxes[property]){
                 gorillaCB.checked = true; 
+            }
+            break;
+        case "museum":
+            if(boxes[property]){
+                museumCB.checked = true; 
             }
             break;
     }
