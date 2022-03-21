@@ -89,15 +89,26 @@ function loadRegionPage(regionData) {
                 provinceli2.textContent = "And the beach and island retreats in the town of Kigufi"
                 provinceli3.textContent = "Once rejuvenated go on a mountain hike and jungle adventure in the country side of the Western Province"
                 // DIV 3: Districts of the province
-                var i = 0
-                console.log(key[i])
-                    for(const [subKey, subValue] of Object.entries(key[i])){
+                var i = 0;
+                for(const [subKey, subValue] of Object.entries(value)){
+                    i++
+                    for(const [districtKey, array] of Object.entries(subValue)){
+                        
+                        console.log(districtKey, array);
                         var districtP = document.createElement("p");
-                        districtP.textContent = subKey[1];
-                        districtP.className = "flow-text"
+                        if(i === 1){
+                            districtP.textContent = "Districts of Western Province: " + districtKey + ", ";
+                        } else if(i === value.length){
+                            districtP.textContent = districtKey;
+                        } else {
+                            districtP.textContent = districtKey + ", ";
+                        }
+                        districtP.className = "flow-text";
+                        districtP.style.display = "inline"
                         div3.appendChild(districtP);
-                        i++
+                        
                     }
+                }
                 break;
         }
         // DIV 1: appends the h1 element to the division container
