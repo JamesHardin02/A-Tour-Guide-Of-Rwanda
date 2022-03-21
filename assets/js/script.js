@@ -140,9 +140,9 @@ function loadRegionPage(regionData) {
                 regionH1El.textContent = "Southern Province Page"
                 iframeEl.setAttribute("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d858295.5488373828!2d29.703887937304515!3d-2.124870312673158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcbb25c78f1e1b%3A0xdce15a5b60b912f4!2sSouthern%20Province%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1646875911170!5m2!1sen!2sus")
                 regionPageLink.setAttribute('href', "./region-pages/southern-region.html")
-                provinceli1.textContent = ""
-                provinceli2.textContent = ""
-                provinceli3.textContent = ""
+                provinceli1.textContent = "Visit the palace of ancient african kings"
+                provinceli2.textContent = "Participate in local cultural juice making experience"
+                provinceli3.textContent = "Dine on delicious local cuisine!"
                 // DIV 3: Districts of the province
                 var i = 0;
                 for(const [subKey, subValue] of Object.entries(value)){
