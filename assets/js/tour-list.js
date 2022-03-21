@@ -91,6 +91,31 @@ function loadList() {
                         locationP.textContent = "Centre Pastoral St. Augustin hotel: Lodge in the sanctuary of the Centre Pastoral St. Augustin hotel"
                     }
                     break;
+                case "jambo":
+                    if(boxes[property]){
+                        locationP.textContent = "Jambo Beach: Enjoy a delicious meal by Lake Muhazi at Jambo Beach"
+                    }
+                    break;
+                case "muhaziHotel":
+                    if(boxes[property]){
+                        locationP.textContent = "Muhazi Beach Hotel: Wake up to beautiful views of Lake Muhazi from a cozy cottage"
+                    }
+                    break;
+                case "anglican":
+                    if(boxes[property]){
+                        locationP.textContent = "Anglican Heritage Sites: Visit Gahini's Anglican Christian Heritage sites"
+                    }
+                    break;
+                case "akagera":
+                    if(boxes[property]){
+                        locationP.textContent = "Akagera National Park: Safari adventure in the savannah"
+                    }
+                    break;
+                case "rhinoLodge":
+                    if(boxes[property]){
+                        locationP.textContent = "Akagera Rhino Lodge: Lodge in the mountains of Akagera over looking the savannah and Lake Ihema"
+                    }
+                    break;
             };
 
             tourList.appendChild(locationP);
