@@ -142,6 +142,12 @@ function loadList() {
                         locationP.textContent = "Splendid Hotel: Enjoy a comfortable stay at the Splendid Hotel"
                     }
                     break;
+                // NORTHERN PROVINCE
+                case "childrenVillage":
+                    if(boxes[property]){
+                        locationP.textContent = "SOS Childrens Village: Visit the local childrens village and see how rwanda cares for their orphans"
+                    }
+                    break;
             };
 
             tourList.appendChild(locationP);
